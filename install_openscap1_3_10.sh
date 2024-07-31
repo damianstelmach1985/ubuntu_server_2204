@@ -39,7 +39,7 @@ temp_file=$(mktemp)
 # Inicjalizacja zmiennej linii
 line_number=0
 
-# Przetwarzanie pliku linia po linii
+# Przetwarzanie pliku linia po linii aby oszukać opcję pozwalającą wyłączać kompilację SSG dla wszystkich systemów operacyjnych poza ubuntu server 22_04 
 while IFS= read -r line; do
     ((line_number++))
     if ((line_number >= 193 && line_number <= 296)) && [[ "$line" != "SSG_PRODUCT_UBUNTU2204:BOOL=ON" ]]; then
